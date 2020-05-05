@@ -10,10 +10,66 @@ typedef struct{
     int leftry;
 }Grille;
 
-void remplir(Grille * m, int i, int j, int pastcolor, int newcolor){
-    
+void rdm();//test des couleurs des voisins~~~~~~~~
+
+void setCase(Grille * m, int l, int c, int newcolor){
+  (*m).Case[i][j] = newcolor;
 }
 
+void remplir(Grille * m, int i, int j, int pastcolor, int newcolor){
+  setCase(m,0,0,newcolor);
+
+  /*if((*m).Case[0][1] == pastcolor){
+
+  }
+
+  if((*m).Case[1][1] == pastcolor){
+    
+  }*/
+}
+
+void
+  //bord sup
+  if(i == 0){
+    //haut gauche
+    if(j == 0){
+
+    }
+    //haut droite
+    else if(j == 11){
+
+    }
+    else{
+
+    }
+  }
+  //bord inf
+  else if(i == 11){
+    //bas gauche
+    if(j == 0){
+
+    }
+    //bas droite
+    else if(j == 11){
+
+    }
+    else{
+
+    }
+  }
+  //bord gauche
+  else if(j == 0){
+
+  }
+  //bord droite
+  else if(j == 11){
+
+  }
+  //middle
+  else{
+
+  }
+}
 
 void initialiser (Grille * m){
     int i,j;
@@ -26,7 +82,7 @@ void initialiser (Grille * m){
     for(i=0;i<(*m).lin;i++){
         (*m).Case[i] = malloc((*m).col * sizeof(char*));
         for (j=0;j<(*m).col;j++){
-            (*m).Case[i][j] = rand()%(7); 
+            setCase(m,i,j,rand()%(7)); 
         }
     }
 }
